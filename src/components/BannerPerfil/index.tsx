@@ -1,5 +1,5 @@
-import { Especialidade, Imagem, NomeRestaurante } from './styles'
-import bannerImg from '../../assets/images/bannerPerfil.png'
+import { Especialidade, Imagem, NomeRestaurante } from "./styles";
+import bannerImg from "../../assets/images/bannerPerfil.png";
 
 const BannerPerfil = () => (
   <Imagem style={{ backgroundImage: `url(${bannerImg})` }}>
@@ -8,6 +8,6 @@ const BannerPerfil = () => (
       <NomeRestaurante>La Dolce Vita Trattoria</NomeRestaurante>
     </div>
   </Imagem>
-)
+);
 
-export default BannerPerfil
+export default BannerPerfil;

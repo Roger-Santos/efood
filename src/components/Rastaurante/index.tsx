@@ -1,47 +1,46 @@
-import { Link } from 'react-router-dom'
-import { Tag } from '../Tag'
+import { Link } from "react-router-dom";
+import { Tag } from "../Tag";
 import {
   Card,
   Imagem,
-  Infos,
+  Tipo,
   Fundo,
   AreaTituloRating,
   Titulo,
   AreaRating,
   Nota,
-  Descricao
-} from './styles'
+  Descricao,
+} from "./styles";
 
 type Props = {
-  title: string
-  rating: string
-  image: string
-  infos: string[]
-  description: string
-}
+  titulo: string
+  tipo: string
+  avaliacao: number
+  descricao: string
+  capa: string
+  id: number
+};
 
-const Restaurante = ({ title, rating, image, infos, description }: Props) => (
+const Restaurante = ({ titulo, tipo, avaliacao, descricao, capa }: Props) => (
   <Card>
-    <Imagem src={image} alt={title} />
-    <Infos>
-      {infos.map((info) => (
-        <Tag key={info}>{info}</Tag>
-      ))}
-    </Infos>
+    <Imagem src={capa} alt={titulo} />
+    <Tipo>      
+      <Tag key={titulo}>{tipo}</Tag>      
+    </Tipo>
     <Fundo>
       <AreaTituloRating>
-        <Titulo>{title}</Titulo>
+        <Titulo>{titulo}</Titulo>
         <AreaRating>
-          <Nota>{rating}</Nota>
-          <img src={require('../../assets/images/estrela.png')} />
+          <Nota>{avaliacao}</Nota>
+          <img src={require("../../assets/images/estrela.png")} alt="simbolo rating"/>
         </AreaRating>
       </AreaTituloRating>
-      <Descricao>{description}</Descricao>
+      <Descricao>{descricao}</Descricao>
       <Link to="/Perfil">
         <Tag>Saiba mais</Tag>
       </Link>
     </Fundo>
   </Card>
-)
+);
 
-export default Restaurante
+export default Restaurante;

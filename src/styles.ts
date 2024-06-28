@@ -1,19 +1,19 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const cores = {
-  corSite: '#FFF8F2',
-  corTexto: '#E66767',
-  corTextoSecundario: '#FFFFFF',
-  corCard: '#FFFFFF',
-  corBordaCard: '#E66767',
-  corTag: '#E66767',
-  corTextoTag: '#FFFFFF',
-  corFooter: '#FFEBD9',
-  corCardPrato: '#E66767',
-  corCardPratoTexto: '#FFEBD9',
-  corBotaoPerfil: '#FFEBD9',
-  corBotaoTexto: '#E66767'
-}
+  corSite: "#FFF8F2",
+  corTexto: "#E66767",
+  corTextoSecundario: "#FFFFFF",
+  corCard: "#FFFFFF",
+  corBordaCard: "#E66767",
+  corTag: "#E66767",
+  corTextoTag: "#FFFFFF",
+  corFooter: "#FFEBD9",
+  corCardPrato: "#E66767",
+  corCardPratoTexto: "#FFEBD9",
+  corBotaoPerfil: "#FFEBD9",
+  corBotaoTexto: "#E66767",
+};
 
 export const GlobalCss = createGlobalStyle`
   * {
@@ -34,4 +34,4 @@ export const GlobalCss = createGlobalStyle`
     width: 100%;
     margin: 0 auto;
   }
-`
+`;

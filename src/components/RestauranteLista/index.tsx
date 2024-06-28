@@ -1,28 +1,28 @@
-import Mrestaurante from '../../models/Mrestaurante'
-import Restaurante from '../Rastaurante'
-import { Container, List } from './styles'
+import { Comercio } from "../../pages/Home";
+import Restaurante from "../Rastaurante";
+import { Container, List } from "./styles";
 
 export type Props = {
-  restaurante: Mrestaurante[]
-}
+  restaurantes: Comercio[];
+};
 
-const RestauranteLista = ({ restaurante }: Props) => (
+const RestauranteLista = ({ restaurantes }: Props) => (
   <Container>
     <div className="container">
       <List>
-        {restaurante.map((restaurante) => (
+        {restaurantes.map((restaurantes) => (
           <Restaurante
-            key={restaurante.id}
-            title={restaurante.title}
-            rating={restaurante.ratings}
-            image={restaurante.image}
-            infos={restaurante.infos}
-            description={restaurante.description}
+            titulo={restaurantes.titulo}
+            tipo={restaurantes.tipo}
+            avaliacao={restaurantes.avaliacao}
+            descricao={restaurantes.descricao}
+            capa={restaurantes.capa}
+            id={restaurantes.id}
           />
         ))}
       </List>
     </div>
   </Container>
-)
+);
 
-export default RestauranteLista
+export default RestauranteLista;

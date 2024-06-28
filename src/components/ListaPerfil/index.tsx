@@ -1,10 +1,10 @@
-import Mprato from '../../models/Mprato'
-import PratoPerfil from '../PratoPerfil'
-import { Container, List } from './styles'
+import Mprato from "../../models/Mprato";
+import PratoPerfil from "../PratoPerfil";
+import { Container, List } from "./styles";
 
 export type Props = {
-  prato: Mprato[]
-}
+  prato: Mprato[];
+};
 
 const ListaPerfil = ({ prato }: Props) => (
   <Container>
@@ -21,6 +21,6 @@ const ListaPerfil = ({ prato }: Props) => (
       </List>
     </div>
   </Container>
-)
+);
 
-export default ListaPerfil
+export default ListaPerfil;

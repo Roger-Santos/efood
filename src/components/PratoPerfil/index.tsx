@@ -1,10 +1,10 @@
-import { Botao, Card, Descricao, Imagem, Titulo } from './styles'
+import { Botao, Card, Descricao, Imagem, Titulo } from "./styles";
 
 type Props = {
-  title: string
-  image: string
-  description: string
-}
+  title: string;
+  image: string;
+  description: string;
+};
 
 const PratoPerfil = ({ title, image, description }: Props) => (
   <Card>
@@ -13,6 +13,6 @@ const PratoPerfil = ({ title, image, description }: Props) => (
     <Descricao>{description}</Descricao>
     <Botao>Adicionar ao carrinho</Botao>
   </Card>
-)
+);
 
-export default PratoPerfil
+export default PratoPerfil;
