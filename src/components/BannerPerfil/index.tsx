@@ -1,11 +1,16 @@
 import { Especialidade, Imagem, NomeRestaurante } from "./styles";
 import bannerImg from "../../assets/images/bannerPerfil.png";
+import { Comercio } from "../../pages/Home";
 
-const BannerPerfil = () => (
-  <Imagem style={{ backgroundImage: `url(${bannerImg})` }}>
+export type Props = {
+  restaurante: Comercio;
+};
+
+const BannerPerfil = ({ restaurante }: Props) => (
+  <Imagem style={{ backgroundImage: `url(${restaurante.capa})` }}>
     <div className="container">
-      <Especialidade>Italiana</Especialidade>
-      <NomeRestaurante>La Dolce Vita Trattoria</NomeRestaurante>
+      <Especialidade>{restaurante.tipo}</Especialidade>
+      <NomeRestaurante>{restaurante.titulo}</NomeRestaurante>
     </div>
   </Imagem>
 );

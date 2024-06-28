@@ -13,6 +13,10 @@ export const cores = {
   corCardPratoTexto: "#FFEBD9",
   corBotaoPerfil: "#FFEBD9",
   corBotaoTexto: "#E66767",
+  corModal: "#E66767",
+  corModalTexto: "#FFFFFF",
+  corModalBotaoFundo: "#FFEBD9",
+  corModalBotaoTexto: "#E66767"
 };
 
 export const GlobalCss = createGlobalStyle`

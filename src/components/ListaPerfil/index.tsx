@@ -1,21 +1,23 @@
-import Mprato from "../../models/Mprato";
+import { Comercio } from "../../pages/Home";
 import PratoPerfil from "../PratoPerfil";
 import { Container, List } from "./styles";
 
 export type Props = {
-  prato: Mprato[];
+  restaurante: Comercio;
 };
 
-const ListaPerfil = ({ prato }: Props) => (
+const ListaPerfil = ({ restaurante }: Props) => (
   <Container>
     <div className="container">
       <List>
-        {prato.map((prato) => (
+        {restaurante.cardapio.map((prato) => (
           <PratoPerfil
-            key={prato.id}
-            title={prato.title}
-            image={prato.image}
-            description={prato.description}
+            key={prato.nome}
+            nome={prato.nome}
+            foto={prato.foto}
+            preco={prato.preco}
+            descricao={prato.descricao}
+            porcao={prato.porcao}
           />
         ))}
       </List>

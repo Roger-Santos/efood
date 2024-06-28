@@ -12,7 +12,7 @@ export const Card = styled.div`
 `;
 export const Imagem = styled.img`
   width: 472px;
-  Height: 217px;
+  height: 217px;
   object-fit: cover;
 `;
 export const Tipo = styled.div`

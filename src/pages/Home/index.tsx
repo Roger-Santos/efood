@@ -10,10 +10,15 @@ export type Comercio = {
   avaliacao: number;
   descricao: string;
   capa: string;
-  cardapio: {
-    foto: string;
-    preco: number;
-  };
+  cardapio: [
+    {
+      nome: string;
+      foto: string;
+      descricao: string;
+      preco: number;
+      porcao: string;
+    }
+  ];
 };
 
 const Home = () => {
