@@ -28,7 +28,15 @@ const Restaurante = ({
   descricao,
   capa,
   id,
-}: Props) => (
+}: Props) => {
+  const getDescricao = (descricao: string) => {
+    if (descricao.length > 250) {
+      return descricao.slice(0, 247) + "...";
+    }
+    return descricao;
+  };
+
+  return (
   <Card>
     <Imagem src={capa} alt={titulo} />
     <Tipo>
@@ -45,12 +53,12 @@ const Restaurante = ({
           />
         </AreaRating>
       </AreaTituloRating>
-      <Descricao>{descricao}</Descricao>
+      <Descricao>{getDescricao(descricao)}</Descricao>
       <Link to={`/Perfil/${id}`}>
         <Tag>Saiba mais</Tag>
       </Link>
     </Fundo>
-  </Card>
-);
+  </Card>)
+};
 
 export default Restaurante;
