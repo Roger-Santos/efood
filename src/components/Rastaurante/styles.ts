@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cores } from "../../styles";
+import { breakpoints, cores } from "../../styles";
 import { TagContainer } from "../Tag/styles";
 
 export const Card = styled.div`
@@ -8,6 +8,14 @@ export const Card = styled.div`
 
   ${TagContainer} {
     margin-right: 8px;
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 472px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    grid-template-columns: 1fr;
   }
 `;
 export const Imagem = styled.img`

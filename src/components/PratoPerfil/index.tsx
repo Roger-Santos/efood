@@ -26,8 +26,8 @@ const PratoPerfil = ({ prato }: Props) => {
   }
 
   const getDescricao = (descricao: string) => {
-    if (descricao.length > 130) {
-      return descricao.slice(0, 127) + "...";
+    if (descricao.length > 125) {
+      return descricao.slice(0, 122) + "...";
     }
     return descricao;
   };
