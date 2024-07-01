@@ -37,28 +37,29 @@ const Restaurante = ({
   };
 
   return (
-  <Card>
-    <Imagem src={capa} alt={titulo} />
-    <Tipo>
-      <Tag key={titulo}>{tipo}</Tag>
-    </Tipo>
-    <Fundo>
-      <AreaTituloRating>
-        <Titulo>{titulo}</Titulo>
-        <AreaRating>
-          <Nota>{avaliacao}</Nota>
-          <img
-            src={require("../../assets/images/estrela.png")}
-            alt="simbolo rating"
-          />
-        </AreaRating>
-      </AreaTituloRating>
-      <Descricao>{getDescricao(descricao)}</Descricao>
-      <Link to={`/Perfil/${id}`}>
-        <Tag>Saiba mais</Tag>
-      </Link>
-    </Fundo>
-  </Card>)
+    <Card>
+      <Imagem src={capa} alt={titulo} />
+      <Tipo>
+        <Tag key={titulo}>{tipo}</Tag>
+      </Tipo>
+      <Fundo>
+        <AreaTituloRating>
+          <Titulo>{titulo}</Titulo>
+          <AreaRating>
+            <Nota>{avaliacao}</Nota>
+            <img
+              src={require("../../assets/images/estrela.png")}
+              alt="simbolo rating"
+            />
+          </AreaRating>
+        </AreaTituloRating>
+        <Descricao>{getDescricao(descricao)}</Descricao>
+        <Link to={`/Perfil/${id}`}>
+          <Tag>Saiba mais</Tag>
+        </Link>
+      </Fundo>
+    </Card>
+  );
 };
 
 export default Restaurante;

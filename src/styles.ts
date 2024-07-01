@@ -16,7 +16,12 @@ export const cores = {
   corModal: "#E66767",
   corModalTexto: "#FFFFFF",
   corModalBotaoFundo: "#FFEBD9",
-  corModalBotaoTexto: "#E66767"
+  corModalBotaoTexto: "#E66767",
+  corCartFundo: "#E66767",
+  corCartTexto: "#E66767",
+  corCartTextoSecundario: "#FFEBD9",
+  corCartProdutoFundo: "#FFEBD9",
+  corCartBotaoFundo: "#FFEBD9",
 };
 
 export const GlobalCss = createGlobalStyle`

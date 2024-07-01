@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { add, open } from '../../store/reducers/cart'
 import fechar from "../../assets/images/close.png";
 import {
   Botao,
@@ -9,16 +11,20 @@ import {
   ModalContent,
   Titulo,
 } from "./styles";
+import Mprato from "../../models/Mprato";
 
 type Props = {
-  nome: string;
-  foto: string;
-  preco: number;
-  descricao: string;
-  porcao: string;
+  prato: Mprato
 };
 
-const PratoPerfil = ({ nome, foto, preco, descricao, porcao }: Props) => {
+const PratoPerfil = ({ prato }: Props) => {
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    dispatch(add(prato))
+    dispatch(open())
+  }
+
   const getDescricao = (descricao: string) => {
     if (descricao.length > 130) {
       return descricao.slice(0, 127) + "...";
@@ -37,25 +43,23 @@ const PratoPerfil = ({ nome, foto, preco, descricao, porcao }: Props) => {
   };
 
   const formataPreco = (preco = 0) => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(preco)
-  }
+    return new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(preco);
+  };
 
   return (
     <>
-      <Card
-        onClick={() => {
+      <Card>
+        <Imagem src={prato.image} alt={prato.title} />
+        <Titulo>{prato.title}</Titulo>
+        <Descricao>{getDescricao(prato.description)}</Descricao>
+        <Botao onClick={() => {
           setModal({
             isVisible: true,
           });
-        }}
-      >
-        <Imagem src={foto} alt={nome} />
-        <Titulo>{nome}</Titulo>
-        <Descricao>{getDescricao(descricao)}</Descricao>
-        <Botao>Adicionar ao carrinho</Botao>
+        }}>Adicionar ao carrinho</Botao>
       </Card>
       <Modal className={modal.isVisible ? "visivel" : ""}>
         <ModalContent className="container">
@@ -69,20 +73,26 @@ const PratoPerfil = ({ nome, foto, preco, descricao, porcao }: Props) => {
           />
 
           <div className="dados">
-            <div className="areaImg"><img className="capa" src={foto} alt={nome} /></div>            
+            <div className="areaImg">
+              <img className="capa" src={prato.image} alt={prato.title} />
+            </div>
             <div className="descricao">
-              <h2>{nome}</h2>
+              <h2>{prato.title}</h2>
               <p>
-                {descricao}<br/><br/>
-                Serve de {porcao}
+                {prato.description}
+                <br />
+                <br />
+                Serve de {prato.porcao}
               </p>
-              <span className="botao">Adicionar ao carrinho - {formataPreco(preco)}</span>             
+              <span className="botao" onClick={addToCart}>
+                Adicionar ao carrinho - {formataPreco(prato.preco)}
+              </span>
             </div>
           </div>
         </ModalContent>
         <div
           onClick={() => {
-            closeModal()
+            closeModal();
           }}
           className="overlay"
         ></div>

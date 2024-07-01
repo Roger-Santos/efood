@@ -6,7 +6,6 @@ export const Card = styled.div`
   padding: 8px;
   background-color: ${cores.corCardPrato};
   color: ${cores.corCardPratoTexto};
-  cursor: pointer;
 `;
 export const Imagem = styled.img`
   width: 304px;
@@ -37,6 +36,11 @@ export const Botao = styled.span`
   font-weight: 700;
   line-height: 16px;
   text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(110%);
+  }
 `;
 
 export const Modal = styled.div`
@@ -70,7 +74,7 @@ export const ModalContent = styled.div`
   padding: 32px;
   color: ${cores.corModalTexto};
   z-index: 3;
-  
+
   .close {
     position: absolute;
     right: 8px;
@@ -103,20 +107,21 @@ export const ModalContent = styled.div`
       background-color: ${cores.corModalBotaoFundo};
       color: ${cores.corModalBotaoTexto};
       cursor: pointer;
+
+      &:hover {
+        filter: brightness(110%);
+      }
     }
-    
   }
 
   .capa {
     overflow: hidden;
     object-fit: cover;
-    width: 380px;
+    width: 280px;
     height: 280px;
   }
 
   .descricao {
     margin-left: 24px;
   }
-
-  
 `;

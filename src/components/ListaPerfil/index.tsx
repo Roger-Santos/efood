@@ -1,3 +1,4 @@
+import Mprato from "../../models/Mprato";
 import { Comercio } from "../../pages/Home";
 import PratoPerfil from "../PratoPerfil";
 import { Container, List } from "./styles";
@@ -10,14 +11,10 @@ const ListaPerfil = ({ restaurante }: Props) => (
   <Container>
     <div className="container">
       <List>
-        {restaurante.cardapio.map((prato) => (
+        {restaurante.cardapio.map((_prato) => (
           <PratoPerfil
-            key={prato.nome}
-            nome={prato.nome}
-            foto={prato.foto}
-            preco={prato.preco}
-            descricao={prato.descricao}
-            porcao={prato.porcao}
+            key={_prato.nome}
+            prato={new Mprato(_prato.id, _prato.nome, _prato.foto, _prato.descricao, _prato.porcao, _prato.preco)}
           />
         ))}
       </List>
