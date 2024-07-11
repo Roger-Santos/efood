@@ -10,7 +10,7 @@ export const Logo = styled.img`
   width: 125px;
   margin-top: 64px;
 `;
-export const Titulo = styled.h1`
+export const Title = styled.h1`
   font-size: 36px;
   margin-top: 138px;
 

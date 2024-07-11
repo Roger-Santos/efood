@@ -1,39 +1,20 @@
-import RestauranteLista from "../../components/RestauranteLista";
+import RestaurantList from "../../components/RestaurantList";
 import Header from "../../components/Header";
 import { useGetFeaturedRestaurantesQuery } from "../../services/api";
 
-export type Comercio = {
-  id: number;
-  titulo: string;
-  destacado: boolean;
-  tipo: string;
-  avaliacao: number;
-  descricao: string;
-  capa: string;
-  cardapio: [
-    {
-      id: number;
-      nome: string;
-      foto: string;
-      descricao: string;
-      preco: number;
-      porcao: string;
-    }
-  ];
-};
-
 const Home = () => {
-  const { data: restaurantes } = useGetFeaturedRestaurantesQuery();
+  const { data: restaurants, isLoading: isLoadingRestaurants } =
+    useGetFeaturedRestaurantesQuery();
 
-  if(restaurantes){
-    return (
-      <>
-        <Header />
-        <RestauranteLista restaurantes={restaurantes} />
-      </>
-    );
-  }
-  return <h4>Carregando</h4>
+  return (
+    <>
+      <Header />
+      <RestaurantList
+        restaurants={restaurants}
+        isLoading={isLoadingRestaurants}
+      />
+    </>
+  );
 };
 
 export default Home;

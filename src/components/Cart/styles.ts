@@ -1,9 +1,10 @@
-import styled from 'styled-components'
-import { cores } from '../../styles'
-import { TagContainer } from '../Tag/styles'
+import styled from "styled-components";
+import { breakpoints, colors } from "../../styles";
+import fechar from "../../assets/images/fechar.png";
 
-
-import fechar from '../../assets/images/fechar.png'
+type InputGroupProps = {
+  maxWidth?: string;
+};
 
 export const Overlay = styled.div`
   position: absolute;
@@ -11,9 +12,9 @@ export const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000;
+  background-color: ${colors.black};
   opacity: 0.7;
-`
+`;
 
 export const CartContainer = styled.div`
   position: fixed;
@@ -28,19 +29,47 @@ export const CartContainer = styled.div`
   &.is-open {
     display: flex;
   }
-`
+`;
 
 export const Sidebar = styled.aside`
-  background-color: ${cores.corCartFundo};
-  z-index: 1;
+  background-color: ${colors.lightRed};
   padding: 32px 8px 0 8px;
   max-width: 360px;
   width: 100%;
-`
+  z-index: 1;
+
+  .empty-text {
+    color: ${colors.tan};
+  }
+`;
+
+export const ProductsCart = styled.div``;
+
+export const DeliveryCart = styled.div`
+  display: none;
+
+  #paymentButton {
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+`;
+
+export const PaymentCart = styled.div`
+  display: none;
+
+  #finishButton {
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+`;
+
+export const ConfirmCart = styled.div`
+  display: block;
+`;
 
 export const CartItem = styled.li`
   display: flex;
-  background-color: ${cores.corCartProdutoFundo};
+  background-color: ${colors.tan};
   padding: 8px;
   position: relative;
   margin-bottom: 16px;
@@ -53,7 +82,7 @@ export const CartItem = styled.li`
   }
 
   h3 {
-    color: ${cores.corCartTexto};
+    color: ${colors.lightRed};
     font-weight: 900;
     font-size: 18px;
     line-height: 22px;
@@ -62,7 +91,7 @@ export const CartItem = styled.li`
 
   span {
     display: block;
-    color: ${cores.corCartTexto};
+    color: ${colors.lightRed};
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;
@@ -75,18 +104,83 @@ export const CartItem = styled.li`
     border: none;
     background-color: transparent;
     position: absolute;
-    top: 0;
-    right: 0;
+    bottom: 8px;
+    right: 8px;
+    cursor: pointer;
   }
-`
-export const TextoValor = styled.div`
+`;
+
+export const ValueText = styled.div`
   display: flex;
   justify-content: space-between;
-  color: ${cores.corCartTextoSecundario};
+  color: ${colors.tan};
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
-  margin-top:40px;
+  margin-top: 40px;
   margin-bottom: 16px;
-`
+`;
 
+export const Title = styled.h2`
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: ${colors.tan};
+  margin-bottom: 16px;
+`;
+
+export const InputGroup = styled.div<InputGroupProps>`
+  flex: auto;
+
+  max-width: ${(props) => props.maxWidth || "auto"};
+
+  label {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    color: ${colors.tan};
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  input,
+  select {
+    background-color: ${colors.tan};
+    color: ${colors.formText};
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    height: 32px;
+    border: none;
+    padding: 0 8px;
+    width: 100%;
+    margin-bottom: 8px;
+
+    &.error {
+      border: 2px solid ${colors.red};
+    }
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    margin-top: 16px;
+  }
+`;
+
+export const DivFlex = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const ConfirmText = styled.p`
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: ${colors.tan};
+  margin-bottom: 24px;
+`;
+
+export const ErrorMessage = styled.span`
+  color: ${colors.white};
+  font-size: 12px;
+  font-weight: 400;
+`;

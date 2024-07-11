@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { breakpoints, cores } from "../../styles";
+import { breakpoints, colors } from "../../styles";
 import { TagContainer } from "../Tag/styles";
 
 export const Card = styled.div`
-  background-color: ${cores.corCard};
+  background-color: ${colors.white};
   position: relative;
 
   ${TagContainer} {
@@ -15,42 +15,43 @@ export const Card = styled.div`
   }
 
   @media (max-width: ${breakpoints.tablet}) {
+    width: 340px;
     grid-template-columns: 1fr;
   }
 `;
-export const Imagem = styled.img`
-  width: 472px;
+export const RestaurantImage = styled.img`
+  width: 100%;
   height: 217px;
   object-fit: cover;
 `;
-export const Tipo = styled.div`
+export const RestaurantType = styled.div`
   position: absolute;
   top: 16px;
   right: 16px;
 `;
-export const Fundo = styled.div`
+export const CardBackground = styled.div`
   padding: 8px;
-  border: solid ${cores.corBordaCard} 1px;
+  border: solid ${colors.lightRed} 1px;
   border-top: none;
 `;
-export const AreaTituloRating = styled.div`
+export const TitleRateArea = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
 `;
-export const AreaRating = styled.div`
+export const RateArea = styled.div`
   display: flex;
 `;
-export const Titulo = styled.h3`
+export const Title = styled.h3`
   font-weight: bold;
   font-size: 18px;
 `;
-export const Nota = styled.h3`
+export const Rate = styled.h3`
   font-weight: bold;
   font-size: 18px;
   margin-right: 8px;
 `;
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
   margin-bottom: 16px;

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import Mprato from "../../models/Mprato";
+import Mprato from "../../models/DishModel";
 
 type CartState = {
   items: Mprato[];
@@ -33,8 +33,11 @@ const cartSlice = createSlice({
     close: (state) => {
       state.isOpen = false;
     },
+    clear: (state) => {
+      state.items = [];
+    },
   },
 });
 
-export const { add, open, close, remove } = cartSlice.actions;
+export const { add, open, close, remove, clear } = cartSlice.actions;
 export default cartSlice.reducer;

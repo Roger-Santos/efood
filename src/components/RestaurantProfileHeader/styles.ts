@@ -14,7 +14,7 @@ export const HeaderBar = styled.header`
   }
 `;
 
-export const HeaderElementos = styled.div`
+export const HeaderElements = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,13 +25,18 @@ export const HeaderElementos = styled.div`
     padding-top: 32px;
   }
 `;
-export const HeaderTextos = styled.span`
+export const HeaderTexts = styled.span`
   font-size: 18px;
   font-weight: 900;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(110%);
+  }
 `;
 export const Logo = styled.img`
   width: 125px;
-  
+
   @media (max-width: ${breakpoints.desktop}) {
     margin-top: 12px;
     margin-bottom: 12px;

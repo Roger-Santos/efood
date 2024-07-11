@@ -1,24 +1,24 @@
-import { HeaderBar, Logo, Titulo } from "./styles";
+import * as S from "./styles";
 import headerImg from "../../assets/images/fundo.png";
 import { Link } from "react-router-dom";
 
 const Header = () => (
   <>
-    <HeaderBar style={{ backgroundImage: `url(${headerImg})` }}>
+    <S.HeaderBar style={{ backgroundImage: `url(${headerImg})` }}>
       <div className="container">
         <Link to="/">
-          <Logo
+          <S.Logo
             src={require("../../assets/images/logo.png")}
             alt="Logo do eFood"
           />
         </Link>
-        <Titulo>
+        <S.Title>
           Viva experiências gastronômicas
           <br />
           no conforto da sua casa
-        </Titulo>
+        </S.Title>
       </div>
-    </HeaderBar>
+    </S.HeaderBar>
   </>
 );
 

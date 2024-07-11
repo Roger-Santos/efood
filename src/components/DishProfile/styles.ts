@@ -1,38 +1,38 @@
 import styled from "styled-components";
-import { cores } from "../../styles";
+import { breakpoints, colors } from "../../styles";
 
 export const Card = styled.div`
   width: 320px;
   padding: 8px;
-  background-color: ${cores.corCardPrato};
-  color: ${cores.corCardPratoTexto};
+  background-color: ${colors.lightRed};
+  color: ${colors.tan};
 `;
-export const Imagem = styled.img`
+export const CardImage = styled.img`
   width: 304px;
   height: 167px;
   object-fit: cover;
   margin-bottom: 8px;
 `;
 
-export const Titulo = styled.h3`
+export const Title = styled.h3`
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 8px;
 `;
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
   margin-bottom: 8px;
 `;
 
-export const Botao = styled.span`
+export const StandardButton = styled.span`
   display: block;
   padding: 4px;
   font-size: 14px;
-  background-color: ${cores.corBotaoPerfil};
-  color: ${cores.corBotaoTexto};
+  background-color: ${colors.tan};
+  color: ${colors.lightRed};
   font-weight: 700;
   line-height: 16px;
   text-align: center;
@@ -69,10 +69,11 @@ export const Modal = styled.div`
 export const ModalContent = styled.div`
   position: relative;
   width: 1024px;
-  height: 338px;
-  background-color: ${cores.corModal};
+  max-height: 338px;
+  height: 100%;
+  background-color: ${colors.lightRed};
   padding: 32px;
-  color: ${cores.corModalTexto};
+  color: ${colors.white};
   z-index: 3;
 
   .close {
@@ -104,12 +105,20 @@ export const ModalContent = styled.div`
       font-weight: 700;
       line-height: 16px;
       padding: 4px 8px 4px 8px;
-      background-color: ${cores.corModalBotaoFundo};
-      color: ${cores.corModalBotaoTexto};
+      background-color: ${colors.tan};
+      color: ${colors.lightRed};
       cursor: pointer;
 
       &:hover {
         filter: brightness(110%);
+      }
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+      display: block;
+
+      h2 {
+        margin-top: 24px;
       }
     }
   }
@@ -123,5 +132,9 @@ export const ModalContent = styled.div`
 
   .descricao {
     margin-left: 24px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-height: none;
   }
 `;

@@ -1,4 +1,4 @@
-class Mrestaurante {
+class RestaurantModel {
   title: string;
   ratings: string;
   image: string;
@@ -22,4 +22,4 @@ class Mrestaurante {
   }
 }
 
-export default Mrestaurante;
+export default RestaurantModel;

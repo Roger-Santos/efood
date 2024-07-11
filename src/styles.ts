@@ -1,33 +1,20 @@
 import { createGlobalStyle } from "styled-components";
 
-export const cores = {
-  corSite: "#FFF8F2",
-  corTexto: "#E66767",
-  corTextoSecundario: "#FFFFFF",
-  corCard: "#FFFFFF",
-  corBordaCard: "#E66767",
-  corTag: "#E66767",
-  corTextoTag: "#FFFFFF",
-  corFooter: "#FFEBD9",
-  corCardPrato: "#E66767",
-  corCardPratoTexto: "#FFEBD9",
-  corBotaoPerfil: "#FFEBD9",
-  corBotaoTexto: "#E66767",
-  corModal: "#E66767",
-  corModalTexto: "#FFFFFF",
-  corModalBotaoFundo: "#FFEBD9",
-  corModalBotaoTexto: "#E66767",
-  corCartFundo: "#E66767",
-  corCartTexto: "#E66767",
-  corCartTextoSecundario: "#FFEBD9",
-  corCartProdutoFundo: "#FFEBD9",
-  corCartBotaoFundo: "#FFEBD9",
+export const colors = {
+  white: "#FFFFFF",
+  black: "#000000",
+  lightRed: "#E66767",
+  tan: "#FFEBD9",
+  site: "#FFF8F2",
+  formText: "#4B4B4B",
+  yellow: "#FFFF00",
+  red: "#FF0000",
 };
 
 export const breakpoints = {
-  desktop: '1024px',
-  tablet: '768px'
-}
+  desktop: "1024px",
+  tablet: "768px",
+};
 
 export const GlobalCss = createGlobalStyle`
   * {
@@ -39,8 +26,8 @@ export const GlobalCss = createGlobalStyle`
   }
 
   body {
-    background-color: ${cores.corSite};
-    color: ${cores.corTexto};
+    background-color: ${colors.site};
+    color: ${colors.lightRed};
   }
 
   .container {

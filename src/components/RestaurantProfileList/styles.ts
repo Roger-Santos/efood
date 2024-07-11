@@ -10,7 +10,7 @@ export const List = styled.ul`
   column-gap: 32px;
   row-gap: 32px;
   margin-top: 40px;
-  
+
   @media (max-width: ${breakpoints.desktop}) {
     grid-template-columns: 1fr 1fr;
   }
